@@ -12,6 +12,13 @@
 
 您将学习如何自定义 Visual Studio Code 扩展以及如何为企业 Copilot 编程构建扩展原型
 
+
+***⏲️ 时间***  60min
+
+***😊 学习一下*** [阅读材料](./workshop/01/README.zh-cn.md)
+
+***👁️‍🗨️ 看看代码*** [示例代码](./code/01)
+
 **👣 2. 将 Semantic Kernel 添加到 Visual Studio Code 扩展**
 
 Semantic Kernel 是 Copilot Stack 的最佳实践。 将 Semantic Kernel 注入到 Visual Studio Code 的扩展中？

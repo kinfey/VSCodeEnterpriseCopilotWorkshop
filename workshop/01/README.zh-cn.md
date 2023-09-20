@@ -1,57 +1,56 @@
-# **Visual Studio Code Extension Development**
+# **Visual Studio Code 插件开发**
 
 
-Visual Studio Code is a very popular open source development tool. By installing different extensions, you can complete different programming language support, Devops and other related work. As a developer, you can't live without Visual Studio Code every day. Here, we will learn how the Visual Studio Code Extension is developed.
+Visual Studio Code 是一个非常流行的开源开发工具。 通过安装不同的扩展，可以完成不同编程语言的支持、DevOps等相关工作。 作为开发人员，您每天都离不开 Visual Studio Code。 在这里，我们将了解Visual Studio Code Extension是如何开发的。
 
-## **Environment**
+## **环境配置**
 
-1. Install NodeJS 18+
+1. 安装 NodeJS 18+
 
-2. Open the command line and execute the following command to install Visual Studio Code Extension support
+2. 打开命令行并执行以下命令安装 Visual Studio Code 插件支持
 
 ```bash
 npm install -g yo generator-code
 ```
 
-3. Create a Visual Studio Code Extension project from the command line
-
+3. 从命令行创建 Visual Studio Code 插件项目
 
 ```bash
 yo code
 ```
 
-The following options will be displayed on the command line
+命令行中将显示以下选项
 
 ![image](/imgs/01/01.png)
 
-Visual Studio Code Extensions support TypeScript and JavaScript development, and the Workshop uses JavaScript. 
+Visual Studio Code Extensions 支持 TypeScript 和 JavaScript 开发，本次 Workshop 使用 JavaScript。
 
-Please follow this images to complete the settings
+请按照此图片完成设置
 
 ![image](/imgs/01/02.png)
 
-After creation, select Visual Studio Code to open the project
+创建完成后，选择Visual Studio Code打开项目
 
 ![image](/imgs/01/03.png)
 
-Select Run, press Ctrl + Shift + P, enter Hello World, and as shown below, the project creation is completed.
+选择运行，按Ctrl+Shift+P，输入Hello World，如下图，项目创建完成。
 
 ![image](/imgs/01/04.png)
 
 
-## **VSCode Extension files**
+## **VSCode 插件相关文件**
 
 ### **package.json**
 
-In addition to the node packages related to Visual Studio Code Extension, you can manage the node packages related to Visual Studio Code Extension through package.json. You can also set the project files, response event binding, layout and related settings such as Azure OpenAI's Endpoint and Key here.
+除了与 Visual Studio Code Extension 相关的 node 包外，您还可以通过 package.json 管理与 Visual Studio Code Extension 相关的节点包。 您还可以在此处设置项目文件、响应事件绑定、布局和相关设置，例如 Azure OpenAI 的 Endpoint 和 Key。
 
 ### **extensions.js**
 
-This is the logical implementation of the Visual Studio Code Extension in action. This is the core file and is placed in the root directory by default, but we can place the file in other folders, such as setting a ./src file.
+这是 Visual Studio Code 插件的实际逻辑实现。 这是核心文件，默认放置在根目录下，但是我们可以将该文件放置在其他文件夹中，例如设置一个./src文件。
 
 ![image](/imgs/01/05.png)
 
-and modify package.json, set new location in main object 
+修改 package.json，在 main 中设置新位置
 
 
 ```json
@@ -66,20 +65,19 @@ and modify package.json, set new location in main object
 ```
 
 
-## **Build UI like GitHub Copilot Chat**
+## **复制一个 GitHub Copilot Chat 界面**
 
 ![image](/imgs/01/06.png)
 
-Have you used GitHub Copilot Chat? You can combine your business while chatting and complete the work of writing programs. Copilot for enterprise level or you may need a similar interface. Next we start building a similar interface in Visual Studio Code Extension.
+您使用过 GitHub Copilot Chat 吗？ 你可以一边聊天一边结合自己的业务，完成编写程序的工作。 企业级的副驾驶或者您可能需要类似的界面。 接下来我们开始在 Visual Studio Code Extension 中构建类似的界面。
 
-We know that Visual Studio Code is built on the Electron Framework. So essentially the interface is a WebView. We need to program Visual Studio Code, and we are more based on the implementation of Web UI.
+我们知道 Visual Studio Code 是建立在 Electron 框架之上的。 所以本质上该界面是一个WebView。 我们需要进行Visual Studio Code编程，更多的是基于Web UI的实现。
 
-### **1. Add WebView in extensions.js**
+### **1. 在 extensions.js 添加 WebView **
 
-*add initChatViewContent function*
+*添加 initChatViewContent 方法*
 
-We hope to imitate the implementation of GitHub Copilot Chat and build a chat interface on the left menu. We need to initialize the control activation function. We implement it through Webview. We set the display content through WebViewProvider and the corresponding display events of WebView.
-
+我们希望模仿 GitHub Copilot Chat 的实现，在左侧菜单上构建一个聊天界面。 我们需要初始化控制激活函数。 我们通过Webview来实现。 我们通过WebViewProvider以及WebView对应的显示事件来设置显示内容。
 
 
 ```javascript
@@ -111,7 +109,7 @@ We hope to imitate the implementation of GitHub Copilot Chat and build a chat in
 
 ```
 
-In addition to the traditional combination of input boxes and buttons, we need to interact with WebView by entering commands. You can register related commands.
+除了传统的输入框和按钮组合之外，我们还需要通过输入命令的方式与WebView进行交互。 您可以注册相关命令。
 
 
 ```javascript
@@ -129,7 +127,7 @@ In addition to the traditional combination of input boxes and buttons, we need t
 
 ```
 
-The following is the complete code
+以下是完整代码
 
 ```javascript
 
@@ -287,10 +285,9 @@ module.exports = {
 
 ```
 
-### **2. Replace package.json file**
+### **2. 替换 package.json file**
 
-Visual Studio Code uses JSON for page layout and binds related operations through the contribute field, such as commands, viewContainers, and views operations. The following is the relevant code
-
+Visual Studio Code使用JSON进行页面布局，并通过contribute字段绑定相关操作，例如命令、viewContainers和视图操作。 以下是相关代码
 
 ```json
 
@@ -353,7 +350,9 @@ Visual Studio Code uses JSON for page layout and binds related operations throug
 ```
 
 
-### **3. Add web.js to src**
+### **3. 添加 web.js**
+
+添加 web.js 到 meida/js
 
 
 ```javascript
@@ -385,16 +384,16 @@ Visual Studio Code uses JSON for page layout and binds related operations throug
 
 
 
-### **3. Run Debug again**
+### **3. 再次执行运行和调试**
 
 
 ![image](/imgs/01/07.png)
 
 
-🎉🎉🎉 You finished your Enterprise Copilot Visual Studio Code Extensions Now
+🎉🎉🎉 您现已完成属于您的 Enterprise Copilot Visual Studio Code 插件
 
 
-### **4.  QA interaction with your Enterprise Copilot**
+### **4.  与 Enterprise Copilot 进行问答互动**
 
 
 ![image](/imgs/01/08.png)
@@ -402,7 +401,7 @@ Visual Studio Code uses JSON for page layout and binds related operations throug
 
 ![image](/imgs/01/09.png)
 
-🦸🦸Congratulations, you have initially completed the construction of the page layout. Next, we will proceed to connect with Azure OpenAI Services.
+🦸🦸恭喜，您已经初步完成了页面布局的构建。 接下来，我们将继续连接 Azure OpenAI 服务。
 
 
 
