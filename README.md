@@ -12,6 +12,12 @@ From the diagram, we see that the general part is completed by using GitHub Copi
 
 You'll learn how to customize a Visual Studio Code extension and prototype a extension for enterprise Copilot programming
 
+***⏲️ Hour***  60min
+
+***😊 Learn*** [Read](./workshop/01/README.md)
+
+***👁️‍🗨️ Code*** [Check it](./code/01)
+
 **👣 2. Add Semantic Kernel to Visual Studio Code Extension**
 
 Semantic Kernel is the best practice of Copilot Stack. Inject Semantic Kernel into the Extension of Visual Studio Code
