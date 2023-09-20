@@ -72,6 +72,79 @@ The basic environment configuration is complete. There are a few things to pay a
 2. Sometimes you may encounter C++ problems during compilation. It is recommended to install the Windows C++ development environment.
 
 
-
 **Import Semantic Kernel**
+
+1. Create a new window using Visual Studio Code and open the copilotext folder
+
+2. Add Azure OpenAI Service related information in package.json ( Endpoint, Key , Model)
+
+
+```json
+
+    "configuration": {
+      "type": "object",
+      "title": "copilotext",
+      "properties": {
+        "copilotext.endpoint": {
+          "type": "string",
+          "default": "Your Azure OpenAI Endpoint",
+          "description": "Your Azure OpenAI Endpoint",
+          "order": 0
+        },
+        "copilotext.api_key": {
+          "type": "string",
+          "default": "Your Azure OpenAI KEY",
+          "description": "Your Azure OpenAI KEY",
+          "order": 1
+        },
+        "copilotext.chatgptmodel": {
+          "type": "string",
+          "default": "Your ChatGPT Model",
+          "description": "Your ChatGPT Model",
+          "order": 2
+        }
+      }
+    }
+
+```
+
+
+3. Add semantic-kernel.js to the src folder
+
+
+```json
+
+const fs = require('node:fs');
+const path = require('node:path');
+const dotnet = require('node-api-dotnet');
+
+
+const skAssemblyName = 'Microsoft.SemanticKernel.Core';
+const skOpenAIAssemblyName = 'Microsoft.SemanticKernel.Connectors.AI.OpenAI';
+
+function resolveAssembly(name) {
+  return path.join(__dirname,'../bin', name + '.dll');
+}
+
+dotnet.addListener('resolving', (name) => {
+  const filePath = resolveAssembly(name);
+  if (fs.existsSync(filePath)) dotnet.load(filePath);
+});
+
+/** @type import('../bin/Microsoft.SemanticKernel.Core') */
+dotnet.load(resolveAssembly(skAssemblyName));
+/** @type import('../bin/Microsoft.SemanticKernel.Connectors.AI.OpenAI') */
+dotnet.load(resolveAssembly(skOpenAIAssemblyName));
+
+```
+
+4. Create a new skills folder in the copilotext directory, add the docsskill folder in the skill directory, and then add the translate folder in the docsskill directory.
+
+5. Add skprompt.txt and config.json in the translate directory
+
+6. Add enterprise-copilot.js in src folder
+
+7. Update extension.js & web.js  file
+
+8. 
 
