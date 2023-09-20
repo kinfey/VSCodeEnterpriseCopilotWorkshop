@@ -22,6 +22,14 @@ You'll learn how to customize a Visual Studio Code extension and prototype a ext
 
 Semantic Kernel is the best practice of Copilot Stack. Inject Semantic Kernel into the Extension of Visual Studio Code
 
+
+
+***⏲️ Hour***  60min
+
+***😊 Learn*** [Read](./workshop/02/README.md)
+
+***👁️‍🗨️ Code*** [Check it](./code/02)
+
 **👣 3. Add Promptflow to Visual Studio Code Extension**
 
 Manage enterprise-wide code management with Promptflow New knowledge of the Prompt library. Use Semantic Kernel's Planner combined with Promptflow to create a better human-computer interaction experience
