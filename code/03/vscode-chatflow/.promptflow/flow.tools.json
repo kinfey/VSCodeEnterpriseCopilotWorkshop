@@ -1,0 +1,53 @@
+{
+  "package": {},
+  "code": {
+    "question_embeddings.jinja2": {
+      "type": "llm",
+      "source": "question_embeddings.jinja2"
+    },
+    "answer.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "answer.jinja2"
+    },
+    "chat.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "answer": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "chat.jinja2"
+    },
+    "search_kb.py": {
+      "type": "python",
+      "inputs": {
+        "questionvector": {
+          "type": [
+            "object"
+          ]
+        },
+        "cogconn": {
+          "type": [
+            "CognitiveSearchConnection"
+          ]
+        }
+      },
+      "source": "search_kb.py",
+      "function": "search_kb"
+    }
+  }
+}

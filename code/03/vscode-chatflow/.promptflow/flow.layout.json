@@ -1,0 +1,35 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 12,
+      "y": 62,
+      "index": -1
+    },
+    "outputs": {
+      "x": 12,
+      "y": 612,
+      "index": -1
+    },
+    "question_embeddings": {
+      "x": 175.5,
+      "y": 148,
+      "index": 0
+    },
+    "search_kb": {
+      "x": 176.833251953125,
+      "y": 264,
+      "index": 1
+    },
+    "answer": {
+      "x": 194.1666259765625,
+      "y": 381.33331298828125,
+      "index": 2
+    },
+    "chat": {
+      "x": 12,
+      "y": 502,
+      "index": 3
+    }
+  },
+  "orientation": "Vertical"
+}

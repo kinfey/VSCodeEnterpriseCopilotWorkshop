@@ -1,0 +1,10 @@
+2023-09-21 14:19:19 +0800   14533 execution          INFO     Start to run 4 nodes with concurrency level 16.
+2023-09-21 14:19:19 +0800   14533 execution.flow     INFO     Executing node question_embeddings. node run id: 81c1e807-6fcc-4966-899e-fbd09dfb5870_question_embeddings_0
+2023-09-21 14:19:21 +0800   14533 execution.flow     INFO     Node question_embeddings completes.
+2023-09-21 14:19:21 +0800   14533 execution.flow     INFO     Executing node search_kb. node run id: 81c1e807-6fcc-4966-899e-fbd09dfb5870_search_kb_0
+2023-09-21 14:19:22 +0800   14533 execution.flow     INFO     Node search_kb completes.
+2023-09-21 14:19:22 +0800   14533 execution.flow     INFO     Executing node answer. node run id: 81c1e807-6fcc-4966-899e-fbd09dfb5870_answer_0
+2023-09-21 14:19:34 +0800   14533 execution.flow     INFO     Node answer completes.
+2023-09-21 14:19:34 +0800   14533 execution.flow     INFO     Executing node chat. node run id: 81c1e807-6fcc-4966-899e-fbd09dfb5870_chat_0
+2023-09-21 14:19:35 +0800   14533 execution.flow     WARNING  Output of chat is not json serializable, use str to store it.
+2023-09-21 14:19:35 +0800   14533 execution.flow     INFO     Node chat completes.
