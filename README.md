@@ -36,6 +36,13 @@ Manage enterprise-wide code management with Promptflow New knowledge of the Prom
 
 Our architecture is built around the Copilot Stack
 
+
+***⏲️ Hour***  60min
+
+***😊 Learn*** [Read](./workshop/03/README.md)
+
+***👁️‍🗨️ Code*** [Check it](./code/03)
+
 ![image](/imgs/00/02.png)
 
 

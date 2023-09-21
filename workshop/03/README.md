@@ -54,7 +54,8 @@ If you want to know more, you can see https://microsoft.github.io/promptflow/how
 
 
 
-4. It is recommended that you directly open the sample project and run it directly to view. Of course, you must ensure that your Connection is configured correctly. (Don't forget to run pip install -r requirement.txt firstly)
+4. It is recommended that you directly open the sample project [Download Here](./code/03/vscode-chatflow)
+ and run it directly to view. Of course, you must ensure that your Connection is configured correctly. (Don't forget to run pip install -r requirement.txt firstly)
 
 5. You can select run, debug, and deploy in flow.dag.yaml to complete promptflow debugging.
 
