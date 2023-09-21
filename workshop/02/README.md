@@ -405,7 +405,7 @@ web.js
 
 ```
 
-8. Run again ， oh Your Enterprise GitHub Copilot can be your translator now
+8. Run again ， oh Your Enterprise GitHub Copilot can be your translator now [Download Code](./code/02/kickoff)
 
 
 ![image](/imgs/02/translate.png)
@@ -415,4 +415,7 @@ But this is a code editor. We need more than just a translator. We can enhance o
 
 
 ![image](/imgs/02/code.png)
+
+🦸🦸 Congratulations ！！！ You have learned to customize a Visual Studio Code Extension similar to GitHub Copilot Chat. Next we will customize enterprise-level functions.
+
 

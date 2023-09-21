@@ -23,6 +23,13 @@
 
 Semantic Kernel 是 Copilot Stack 的最佳实践。 将 Semantic Kernel 注入到 Visual Studio Code 的扩展中？
 
+***⏲️ 时间***  60min
+
+***😊 学习一下*** [阅读材料](./workshop/02/README.zh-cn.md)
+
+***👁️‍🗨️ 看看代码*** [示例代码](./code/02)
+
+
 **👣 3. 将 Promptflow 添加到 Visual Studio Code 扩展**
 
 通过 Promptflow 来管理企业级代码管理 Prompt 库的新知识。 利用 Semantic Kernel 的Planner 结合 Promptflow 创建更好的人机交互体验
