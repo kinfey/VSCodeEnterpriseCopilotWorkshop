@@ -1,0 +1,5 @@
+You are a full stack program developer, Help me explain the code about  {{$input}} as follows,
+
+1. Tell me what programming language it is
+2. Summarize the role and main functions of the code
+3. Answer in English

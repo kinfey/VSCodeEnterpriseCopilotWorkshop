@@ -2,6 +2,8 @@
 
 ## **Introduction Semantic Kernel**
 
+![image](/imgs/02/sk.png)
+
 At Microsoft Build in May 2023, Microsoft released Copilot Stack for LLM applications. It pointed out the direction for everyone to build applications through large models. Semantic Kernel is the best framework to implement Copilot Stack (this is a bit one-sided, but I am undeniably a Semantic Kernel fanatic). Someone asked me, why not LangChain? It is undeniable that LangChain is a good framework. It solves AI problems more in an AI way, but Semantic Kernel better bridges the gap between code and prompts, and is very good for highly engineered projects. role. If you want to learn more about Semantic Kernel, you can go to Semantic Kernel’s GitHub to learn （https://github.com/microsoft/semantic-kernel）
 
 **How to add Semantic Kernel support to a Visual Studio Code extension**
@@ -270,17 +272,6 @@ function activate(context) {
 	context.subscriptions.push(vscode.window.registerWebviewViewProvider('copilotext.copilotView' , webViewProvider,  {
 		webviewOptions: { retainContextWhenHidden: true }
 	}));	
-	
-	const ask_cmd = vscode.commands.registerCommand('copilotext.addAskResponse', async function () {
-
-
-		this.webView.webview.postMessage({ type: 'addQA', value:  '🤖 <br/><br/>' });
-	})
-
-	
-
-	
-	context.subscriptions.push(ask_cmd);
 }
 
 
@@ -418,4 +409,10 @@ web.js
 
 
 ![image](/imgs/02/translate.png)
+
+
+But this is a code editor. We need more than just a translator. We can enhance our enterprise-level programming capabilities by adding different Skills. If you are interested, you can run the project in the [code/02/final](./code/02/final) folder. When you open the code and right-click the mouse, you can add code analysis, inspection, and refactoring capabilities. Or is this your ultimate enterprise-grade Copilot implementation?
+
+
+![image](/imgs/02/code.png)
 
