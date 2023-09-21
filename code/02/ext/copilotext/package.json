@@ -1,0 +1,87 @@
+{
+  "name": "copilotext",
+  "displayName": "copilotext",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "copilotext.addAskResponse",
+      "title": "🤖 ask copilot"
+    }],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "copilotext",
+          "title": "Enterprise Copilot",
+          "icon": "media/imgs/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "copilotext": [
+        {
+          "type": "webview",
+          "id": "copilotext.copilotView",
+          "name": "EnpterpriseCopilot"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "copilotext",
+      "properties": {
+        "copilotext.endpoint": {
+          "type": "string",
+          "default": "Your Azure OpenAI Endpoint",
+          "description": "Your Azure OpenAI Endpoint",
+          "order": 0
+        },
+        "copilotext.api_key": {
+          "type": "string",
+          "default": "Your Azure OpenAI KEY",
+          "description": "Your Azure OpenAI KEY",
+          "order": 1
+        },
+        "copilotext.chatgptmodel": {
+          "type": "string",
+          "default": "Your ChatGPT Model",
+          "description": "Your ChatGPT Model",
+          "order": 2
+        },
+        "copilotext.embeddingmodel": {
+          "type": "string",
+          "default": "Your Embedding Model",
+          "description": "Your Embedding Model",
+          "order": 3
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "node-api-dotnet": "file:../../out/pkg/node-api-dotnet"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}

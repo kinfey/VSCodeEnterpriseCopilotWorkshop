@@ -1,7 +1,3 @@
 node_modules
 .vscode-test/
 *.vsix
-bin
-pkg
-obj
-
