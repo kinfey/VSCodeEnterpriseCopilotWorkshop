@@ -5,6 +5,7 @@ const dotnet = require('node-api-dotnet');
 
 const skAssemblyName = 'Microsoft.SemanticKernel.Core';
 const skOpenAIAssemblyName = 'Microsoft.SemanticKernel.Connectors.AI.OpenAI';
+// const skFuncAssemblyName = 'Microsoft.SemanticKernel.Functions.Semantic';
 
 /** All assemblies are resolved from the bin directory, where they were copied by MSBuild. */
 function resolveAssembly(name) {
@@ -21,3 +22,6 @@ dotnet.addListener('resolving', (name) => {
 dotnet.load(resolveAssembly(skAssemblyName));
 /** @type import('../bin/Microsoft.SemanticKernel.Connectors.AI.OpenAI') */
 dotnet.load(resolveAssembly(skOpenAIAssemblyName));
+/** @type import('../bin/Microsoft.SemanticKernel.Functions.Semantic') */
+// dotnet.load(resolveAssembly(skFuncAssemblyName));
+/** @type import('../bin/Microsoft.SemanticKernel.Abstractions') */
