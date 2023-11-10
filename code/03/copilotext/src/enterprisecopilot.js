@@ -10,11 +10,12 @@ const config = vscode.workspace.getConfiguration('copilotext');
 const endPoint = config.get('endpoint');
 const apiKey = config.get('api_key');
 const gptModel = config.get('chatgptmodel');
-const kernel = SK.OpenAIKernelBuilderExtensions.WithAzureChatCompletionService(SK.Kernel.Builder, gptModel,endPoint, apiKey).Build();
-const skillsDirectory = path.join(__dirname,'../plugins');
-const skills = ['CodePlugin'];
-const code_skill = SK.KernelSemanticFunctionExtensions.ImportSemanticFunctionsFromDirectory(kernel,skillsDirectory,skills);
+const kernel = SK.OpenAIKernelBuilderExtensions.WithAzureOpenAIChatCompletionService(SK.Kernel.Builder, gptModel,endPoint, apiKey).Build();
+const pluginsDirectory = path.join(__dirname,'../plugins');
+const plugins = ['CodePlugin'];
 
+
+const code_plugin = SK.KernelSemanticFunctionExtensions.ImportSemanticSkillFromDirectory(kernel,pluginsDirectory,plugins);
 
 
 // const test_skill = SK.SkillDefinition.SKFunction.FromNativeFunction((name)=>demo(name));
@@ -50,7 +51,7 @@ async function RunPlanner(qa){
 async function RunInSemanticKernel(code,style) {
     
 
-    var docFunction = code_skill.get(style);
+    var docFunction = code_plugin.get(style);
 
 
    const context_variable = new dotnet.Microsoft.SemanticKernel.Orchestration.ContextVariables(code);

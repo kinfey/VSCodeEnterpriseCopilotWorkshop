@@ -50,7 +50,7 @@ Our architecture is built around the Copilot Stack
 
 1. ⌛ Windows x86 / arm Device (macOS / Linux is not recommended for the time being)
 2. ⌛ NodeJS 18+ (https://nodejs.org/en/download)
-3. ⌛ dotNET 6+ (https://dotnet.microsoft.com/en-us/download)
+3. ⌛ dotNET 8 (https://dotnet.microsoft.com/en-us/download)
 4. ⌛ Python 3.10 (https://www.python.org/downloads/release/python-31012/)
 5. ⌛ Azure OpenAI Service / OpenAI Service (https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 6. ⌛ Docker (https://www.docker.com/)

@@ -49,7 +49,7 @@ Semantic Kernel 是 Copilot Stack 的最佳实践。 将 Semantic Kernel 注入�
 
 1. ⌛ Windows x86 / Arm 的设备 ( macOS / Linux 设备暂时不建议)
 2. ⌛ 安装 NodeJS 18+ (https://nodejs.org/en/download)
-3. ⌛ 安装 dotNET 6+ (https://dotnet.microsoft.com/en-us/download)
+3. ⌛ 安装 dotNET 8 (https://dotnet.microsoft.com/en-us/download)
 4. ⌛ 安装 Python 3.10 (https://www.python.org/downloads/release/python-31012/) 
 5. ⌛ Azure OpenAI Service / OpenAI Service (https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 6. ⌛ 安装 Docker (https://www.docker.com/)

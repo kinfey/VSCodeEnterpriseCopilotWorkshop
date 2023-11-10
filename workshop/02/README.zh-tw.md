@@ -37,8 +37,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SemanticKernel" Version="0.24.230912.2-preview" />
-    <PackageReference Include="Microsoft.JavaScript.NodeApi.Generator" Version="0.4.4" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.0-beta6" />
+    <PackageReference Include="Microsoft.JavaScript.NodeApi.Generator" Version="0.4.19" />
   </ItemGroup>
 
 </Project>
@@ -70,7 +70,7 @@ npm install
 
 基本環境配置完成。 有幾件事需要注意。
 
-1. 建議安裝.NET 6、.NET 7、.NET 8 RC 1
+1. 建議安裝 .NET 8 
 2. 有時編譯時可能會遇到C++問題。 推薦安裝Windows C++開發環境。
 
 
@@ -198,15 +198,16 @@ const config = vscode.workspace.getConfiguration('copilotext');
 const endPoint = config.get('endpoint');
 const apiKey = config.get('api_key');
 const gptModel = config.get('chatgptmodel');
-const kernel = SK.OpenAIKernelBuilderExtensions.WithAzureChatCompletionService(SK.Kernel.Builder, gptModel,endPoint, apiKey).Build();
-const skillsDirectory = path.join(__dirname,'../skills');
-const code_skill = SK.ImportSemanticSkillFromDirectoryExtension.ImportSemanticSkillFromDirectory(kernel,skillsDirectory,['codeskill']);
+const kernel = SK.OpenAIKernelBuilderExtensions.WithAzureOpenAIChatCompletionService(SK.Kernel.Builder, gptModel,endPoint, apiKey).Build();
+const pluginsDirectory = path.join(__dirname,'../plugins');
+const plugins = ['CodePlugin'];
+const code_plugin = SK.KernelSemanticFunctionExtensions.ImportSemanticSkillFromDirectory(kernel,pluginsDirectory,plugins);
 
 
 
 async function CheckCodeBySK(code,style) {
     
-    const codeFunction = code_skill.get(style);
+    const codeFunction = code_plugin.get(style);
     
     const context_variable = new SK.Orchestration.ContextVariables(code);
 
